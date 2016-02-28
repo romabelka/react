@@ -7,7 +7,6 @@ require('./style.css')
 class Article extends Component {
     static propTypes = {
         article: PropTypes.object,
-
         isOpen: PropTypes.bool,
         toggleOpen: PropTypes.func
     };
@@ -19,8 +18,8 @@ class Article extends Component {
     render() {
         return (
             <div ref="container">
-                <a href = "#" onClick = {this.select.bind(this)} >select</a>
                 {this.getTitle()}
+                <a href = "#" onClick = {this.select.bind(this)} >select</a>
                 <CSSTransition transitionName="example" transitionAppear={true} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
                     {this.getBody()}
                 </CSSTransition>
@@ -30,9 +29,9 @@ class Article extends Component {
 
     getTitle() {
         const { title } = this.props.article
-        const selectedStyle = this.props.selected ? {color: 'red'} : null;
+        const selected = this.props.selected ? "selected" : null;
         return  (
-            <h3 style = {selectedStyle} onClick={this.props.toggleOpen}>
+            <h3 className = {selected} onClick={this.props.toggleOpen}>
                 {title}
             </h3>
         )
@@ -52,6 +51,10 @@ class Article extends Component {
     select(ev) {
         ev.preventDefault()
         this.props.select()
+    }
+
+    click (event) {
+        this.props.click();
     }
 }
 

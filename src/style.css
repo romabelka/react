@@ -1,3 +1,14 @@
+h3 {cursor: pointer; display:inline}
+
+h3 + a {padding-left: 10px}
+
+.selected, .selected * {color: red}
+
+li {border: 3px solid #ddd; margin: 10px 0;}
+li li {border:0; margin-left: 50px}
+
+.hiding {display: none}
+
 .example-enter {
     opacity: 0.01;
 }

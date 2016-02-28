@@ -28,8 +28,11 @@ class ArticleList extends Component {
 
     select(id) {
         return function() {
+            var sel = this.state.selected.slice();
+            var selCheck = sel.indexOf(id);
+            (selCheck !== -1) ? sel.splice (selCheck,1) : sel.push (id);
             this.setState({
-                selected: this.state.selected.concat(id)
+                selected: sel
             })
         }
     }
