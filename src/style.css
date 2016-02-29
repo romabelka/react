@@ -9,6 +9,8 @@ li li {border:0; margin-left: 50px}
 
 .hiding {display: none}
 
+.hint{position: absolute; border: 1px solid #00f; background: #eee; }
+
 .example-enter {
     opacity: 0.01;
 }

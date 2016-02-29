@@ -3,20 +3,20 @@ import React, { Component } from 'react'
 export default function (CustomComponent) {
     return class extends Component {
         state = {
-            isOpen: false
+            hintShowing: false
         }
 
         render() {
             return <CustomComponent
                 {...this.state}
-                {...{toggleOpen: this.toggleOpen}}
+                {...{hintShow: this.hintShow}}
                 {...this.props}
-            />
+                />
         }
 
-        toggleOpen = () => {
+        hintShow = () => {
             this.setState({
-                isOpen: !this.state.isOpen
+                hintShowing: !this.state.hintShowing
             })
         }
     }
